@@ -1,0 +1,1 @@
+insert into user (market_user_id, email) values ('tester', 'nowhere@void.com')
