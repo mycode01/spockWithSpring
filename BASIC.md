@@ -42,9 +42,9 @@ def "테스트명"() {...}
 
 ```groovy
 def "테스트"(){
-	given:
-	String hello = "hello"
-	def world = " world!" //동적
+    given:
+    String hello = "hello"
+    def world = " world!" //동적
 ```
 
 일반적인 BDD에서는 given when then을 사용하는것처럼 각 페이즈를 블록으로 만듬.
@@ -59,13 +59,13 @@ when, then은 함께 사용하게 됨. when에서는 조건 실행을, then에�
 
 ```groovy
 when:
-	def result = Calculator.multiply(x, y)
+    def result = Calculator.multiply(x, y)
 then:
-	result == 10
-	// thrown(NullPointException) // 예외에 대한 검증 
-	//혹은
-  def e = thrown()
-	e.cause == ...
+    result == 10
+    // thrown(NullPointException) // 예외에 대한 검증 
+    //혹은
+    def e = thrown()
+    e.cause == ...
 ```
 
 ```groovy
@@ -106,12 +106,12 @@ when: then: 을 합친 expect: 블록도 있음
 
 ```groovy
 when:
-	def x = Math.max(1,2)
+    def x = Math.max(1,2)
 then:
-  x == 2
+    x == 2
 // 혹은
 expect:
-  Math.max(1,2) == 2
+    Math.max(1,2) == 2
 ```
 
 cleanup: 은 테스트 마무리에 해당
@@ -151,9 +151,9 @@ a == 3, b == 9, c == 9 가 된다.
 
 ```java
 given: "필요한 목 생성"
-	def xxRepository = Mock(XxRepository)
+  def xxRepository = Mock(XxRepository)
 and: "생성된 목을 테스트 대상에 주입"
-	def zzService = new ZzService(xxRepository)
+  def zzService = new ZzService(xxRepository)
 ```
 
 and : 블록은 별 의미 없고, 블록을 나눠서 설명하기 위한 블록
